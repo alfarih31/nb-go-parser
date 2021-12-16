@@ -9,10 +9,12 @@ import (
 
 type String string
 
+// ToInt cast String to int
 func (s String) ToInt() (int, error) {
 	return strconv.Atoi(string(s))
 }
 
+// ToBool cast String to represented bool
 func (s String) ToBool() (bool, error) {
 	switch string(s) {
 	case "true":
@@ -36,6 +38,7 @@ func (s String) ToBool() (bool, error) {
 	}
 }
 
+// ToStringArr cast String to array of string
 func (s String) ToStringArr(separator ...string) ([]string, error) {
 	sep := ","
 	if len(separator) > 0 {
@@ -50,6 +53,7 @@ func (s String) ToStringArr(separator ...string) ([]string, error) {
 	return ss, nil
 }
 
+// ToIntArr cast String to array of int
 func (s String) ToIntArr(separator ...string) ([]int, error) {
 	sep := ","
 	if len(separator) > 0 {
@@ -70,6 +74,8 @@ func (s String) ToIntArr(separator ...string) ([]int, error) {
 	return is, nil
 }
 
+// MaskRight mask string with a char(rune) and left n value on the right side
+// Example: String("NOT_MASKED:MASKED").MaskRight(11, '*') returns NOT_MASKED:******
 func (s String) MaskRight(NLeft int, char rune) string {
 	rs := []rune(s)
 
@@ -84,6 +90,8 @@ func (s String) MaskRight(NLeft int, char rune) string {
 	return string(rs)
 }
 
+// MaskLeft mask string with a char(rune) and left n value on the left side
+// Example: String("MASKED:NOT_MASKED").MaskLeft(11, '*') returns ******:NOT_MASKED
 func (s String) MaskLeft(NLeft int, char rune) string {
 	rs := []rune(s)
 

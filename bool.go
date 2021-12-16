@@ -2,6 +2,7 @@ package parser
 
 type Bool bool
 
+// ToString cast bool to represented string
 func (b Bool) ToString() string {
 	if b {
 		return "true"
@@ -10,6 +11,7 @@ func (b Bool) ToString() string {
 	return "false"
 }
 
+// ToInt cast bool to represented bool
 func (b Bool) ToInt() int {
 	if b {
 		return 1
