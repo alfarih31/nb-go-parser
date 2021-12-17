@@ -18,3 +18,7 @@ func (i Int) ToBool() (bool, error) {
 	}
 	return false, nil
 }
+
+func NilAbleInt(i int) *int {
+	return &i
+}

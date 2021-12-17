@@ -105,3 +105,7 @@ func (s String) MaskLeft(NLeft int, char rune) string {
 
 	return string(rs)
 }
+
+func NilAbleString(s string) *string {
+	return &s
+}
