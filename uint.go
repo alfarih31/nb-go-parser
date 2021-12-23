@@ -17,28 +17,28 @@ func (u UInt) ToBool() (bool, error) {
 	return false, nil
 }
 
-func (i UInt) ToUInt() uint {
-	return uint(i)
+func (u UInt) ToUInt() uint {
+	return uint(u)
 }
 
-func (i UInt) ToUInt32() uint32 {
-	return uint32(i)
+func (u UInt) ToUInt32() uint32 {
+	return uint32(u)
 }
 
-func (i UInt) ToUInt64() uint64 {
-	return uint64(i)
+func (u UInt) ToUInt64() uint64 {
+	return uint64(u)
 }
 
-func (i UInt) ToUIntPtr() *uint {
-	return UIntPtr(uint(i))
+func (u UInt) ToUIntPtr() *uint {
+	return UIntPtr(uint(u))
 }
 
-func (i UInt) ToUIntPtr32() *uint32 {
-	return UIntPtr32(i.ToUInt32())
+func (u UInt) ToUIntPtr32() *uint32 {
+	return UIntPtr32(u.ToUInt32())
 }
 
-func (i UInt) ToUIntPtr64() *uint64 {
-	return UIntPtr64(i.ToUInt64())
+func (u UInt) ToUIntPtr64() *uint64 {
+	return UIntPtr64(u.ToUInt64())
 }
 
 func UIntPtr(i uint) *uint {
