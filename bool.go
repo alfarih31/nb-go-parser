@@ -20,6 +20,6 @@ func (b Bool) ToInt() int {
 	return 0
 }
 
-func NilAbleBool(b bool) *bool {
+func BoolPtr(b bool) *bool {
 	return &b
 }
