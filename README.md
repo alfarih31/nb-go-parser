@@ -11,6 +11,8 @@ Noob Parser is a tools to parser Primitive types, such as:
 - Cast `String` to `Bool` & Vice Versa
 - Cast `String` to `Int` & Vice Versa
 - Cast `Int` to `Bool` & Vice Versa
+- Cast `[]int32` to `[]int` & Vice Versa 
+- Cast `[]int64` to `[]int` & Vice Versa 
 
 ## Contents
 
