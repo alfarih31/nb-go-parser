@@ -105,7 +105,3 @@ func (s String) MaskLeft(NLeft int, char rune) string {
 
 	return string(rs)
 }
-
-func StringPtr(s string) *string {
-	return &s
-}

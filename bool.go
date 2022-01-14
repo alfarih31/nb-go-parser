@@ -19,7 +19,3 @@ func (b Bool) ToInt() int {
 
 	return 0
 }
-
-func BoolPtr(b bool) *bool {
-	return &b
-}

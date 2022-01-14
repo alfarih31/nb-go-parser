@@ -26,7 +26,7 @@ func (a IntArr) ToInt32PtrArr() []*int32 {
 	o := make([]*int32, len(a), cap(a))
 
 	for idx, i := range a {
-		o[idx] = Int(i).ToIntPtr32()
+		o[idx] = Int(i).ToInt32Ptr()
 	}
 
 	return o
@@ -36,7 +36,7 @@ func (a IntArr) ToInt64PtrArr() []*int64 {
 	o := make([]*int64, len(a), cap(a))
 
 	for idx, i := range a {
-		o[idx] = Int(i).ToIntPtr64()
+		o[idx] = Int(i).ToInt64Ptr()
 	}
 
 	return o

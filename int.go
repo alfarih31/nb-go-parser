@@ -32,25 +32,13 @@ func (i Int) ToInt64() int64 {
 }
 
 func (i Int) ToIntPtr() *int {
-	return IntPtr(int(i))
+	return toIntPtr(int(i))
 }
 
-func (i Int) ToIntPtr32() *int32 {
-	return IntPtr32(i.ToInt32())
+func (i Int) ToInt32Ptr() *int32 {
+	return toInt32Ptr(i.ToInt32())
 }
 
-func (i Int) ToIntPtr64() *int64 {
-	return IntPtr64(i.ToInt64())
-}
-
-func IntPtr(i int) *int {
-	return &i
-}
-
-func IntPtr32(i int32) *int32 {
-	return &i
-}
-
-func IntPtr64(i int64) *int64 {
-	return &i
+func (i Int) ToInt64Ptr() *int64 {
+	return toInt64Ptr(i.ToInt64())
 }
