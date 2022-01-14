@@ -71,7 +71,7 @@ func GetOptStringArg(opts []string, defaultValue ...string) string {
 		o = defaultValue[0]
 	}
 
-	if len(opts) > 0 {
+	if len(opts) > 0 && opts[0] != "" {
 		o = opts[0]
 	}
 
