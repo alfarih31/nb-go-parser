@@ -14,6 +14,10 @@ func (s String) ToInt() (int, error) {
 	return strconv.Atoi(string(s))
 }
 
+func (s String) ToStringPtr() *string {
+	return toStringPtr(string(s))
+}
+
 // ToBool cast String to represented bool
 func (s String) ToBool() (bool, error) {
 	switch string(s) {
