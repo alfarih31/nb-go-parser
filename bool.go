@@ -19,3 +19,7 @@ func (b Bool) ToInt() int {
 
 	return 0
 }
+
+func (b Bool) ToBoolPtr() *bool {
+	return toBoolPtr(bool(b))
+}
