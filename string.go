@@ -44,6 +44,10 @@ func (s String) ToBool() (bool, error) {
 
 // ToStringArr cast String to array of string
 func (s String) ToStringArr(separator ...string) ([]string, error) {
+	if s == "" {
+		return []string{}, nil
+	}
+
 	sep := ","
 	if len(separator) > 0 {
 		sep = separator[0]
@@ -59,6 +63,10 @@ func (s String) ToStringArr(separator ...string) ([]string, error) {
 
 // ToIntArr cast String to array of int
 func (s String) ToIntArr(separator ...string) ([]int, error) {
+	if s == "" {
+		return []int{}, nil
+	}
+
 	sep := ","
 	if len(separator) > 0 {
 		sep = separator[0]
