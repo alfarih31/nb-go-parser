@@ -7,16 +7,16 @@ import (
 type Int int
 
 // ToString cast Int to string
-func (i Int) ToString() (string, error) {
-	return strconv.Itoa(int(i)), nil
+func (i Int) ToString() string {
+	return strconv.Itoa(int(i))
 }
 
 // ToBool cast Int to bool. Returns true for i > 0 & return false for i <= 0
-func (i Int) ToBool() (bool, error) {
+func (i Int) ToBool() bool {
 	if i > 0 {
-		return true, nil
+		return true
 	}
-	return false, nil
+	return false
 }
 
 func (i Int) ToInt() int {

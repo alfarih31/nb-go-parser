@@ -14,6 +14,16 @@ func (s String) ToInt() (int, error) {
 	return strconv.Atoi(string(s))
 }
 
+// MustToInt cast String to int with panic on error instead
+func (s String) MustToInt() int {
+	i, err := s.ToInt()
+	if err != nil {
+		panic(err)
+	}
+
+	return i
+}
+
 func (s String) ToStringPtr() *string {
 	return toStringPtr(string(s))
 }
@@ -40,6 +50,16 @@ func (s String) ToBool() (bool, error) {
 	default:
 		return false, errors.New("string cannot be converted to bool")
 	}
+}
+
+// MustToBool cast String to bool with panic on error instead
+func (s String) MustToBool() bool {
+	b, err := s.ToBool()
+	if err != nil {
+		panic(err)
+	}
+
+	return b
 }
 
 // ToStringArr cast String to array of string
