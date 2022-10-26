@@ -23,6 +23,10 @@ func (i Int) ToInt() int {
 	return int(i)
 }
 
+func (i Int) ToInt16() int16 {
+	return int16(i)
+}
+
 func (i Int) ToInt32() int32 {
 	return int32(i)
 }
@@ -33,6 +37,10 @@ func (i Int) ToInt64() int64 {
 
 func (i Int) ToIntPtr() *int {
 	return toIntPtr(int(i))
+}
+
+func (i Int) ToInt16Ptr() *int16 {
+	return toInt16Ptr(int16(i))
 }
 
 func (i Int) ToInt32Ptr() *int32 {

@@ -5,6 +5,10 @@ import (
 	"fmt"
 )
 
+func toInt16Ptr(i int16) *int16 {
+	return &i
+}
+
 func toIntPtr(i int) *int {
 	return &i
 }
@@ -19,6 +23,10 @@ func toInt64Ptr(i int64) *int64 {
 
 type IntPtr struct {
 	i *int
+}
+
+type Int16Ptr struct {
+	i *int16
 }
 
 type Int32Ptr struct {
@@ -93,6 +101,29 @@ func (p *Int64Ptr) Scan(value interface{}) error {
 		}
 	} else {
 		return fmt.Errorf("failed to scan Int64Ptr:\n%v", err)
+	}
+
+	return nil
+}
+
+func (p Int16Ptr) Value() (driver.Value, error) {
+	return p.i, nil
+}
+
+func (p *Int16Ptr) Scan(value interface{}) error {
+	if value == nil {
+		p.i = nil
+		return nil
+	}
+
+	if bv, err := driver.Int32.ConvertValue(value); err != nil {
+		if v, ok := bv.(int16); ok {
+			*p = Int16Ptr{
+				i: toInt16Ptr(v),
+			}
+		}
+	} else {
+		return fmt.Errorf("failed to scan Int16Ptr:\n%v", err)
 	}
 
 	return nil
